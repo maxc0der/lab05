@@ -49,7 +49,7 @@ if(BUILD_TESTS)
           ${CMAKE_CURRENT_SOURCE_DIR}/tests/Stack1_test.cpp
           ${CMAKE_CURRENT_SOURCE_DIR}/tests/Stack2_test.cpp
           )
-  target_link_libraries(tests ${PROJECT_NAME} GTest::gtest_main)
+  target_link_libraries(tests GTest::gtest_main)
   enable_testing()
   add_test(NAME unit_tests COMMAND tests)
 endif()
