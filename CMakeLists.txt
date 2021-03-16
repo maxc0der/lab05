@@ -31,7 +31,7 @@ find_package(GTest CONFIG REQUIRED)
 add_library(${PROJECT_NAME} STATIC
         # enum your files and delete this comment
         ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp
-        include/Stack1.hpp include/Stack2.hpp tests/Stack1_test.cpp tests/Stack2_test.cpp)
+        )
 
 add_executable(demo
         ${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp
@@ -49,7 +49,7 @@ if(BUILD_TESTS)
           ${CMAKE_CURRENT_SOURCE_DIR}/tests/Stack1_test.cpp
           ${CMAKE_CURRENT_SOURCE_DIR}/tests/Stack2_test.cpp
           )
-  target_link_libraries(tests GTest::gtest_main)
+  target_link_libraries(tests ${PROJECT_NAME} GTest::gtest_main)
   enable_testing()
   add_test(NAME unit_tests COMMAND tests)
 endif()
