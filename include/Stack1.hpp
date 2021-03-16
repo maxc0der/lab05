@@ -10,7 +10,7 @@
 template <typename T>
 class Node {
  public:
-  Node(T data_ = T(), Node<T>* pPast_ = nullptr) {
+  explicit Node(T data_ = T(), Node<T>* pPast_ = nullptr) {
     data = data_;
     pPast = pPast_;
   }

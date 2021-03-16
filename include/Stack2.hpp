@@ -1,7 +1,7 @@
 // Copyright 2020 Nasachenko Maxim <maximka5406@gmail.com>
 
-#ifndef LAB_05_STACK_STACK2_HPP_
-#define LAB_05_STACK_STACK2_HPP_
+#ifndef INCLUDE_STACK2_HPP_
+#define INCLUDE_STACK2_HPP_
 #include <iostream>
 #include <memory>
 #include <string>
@@ -10,7 +10,7 @@
 template <typename T>
 class Node {
  public:
-  Node(T data_ = T(), Node<T>* pPast_ = nullptr) {
+  explicit Node(T data_ = T(), Node<T>* pPast_ = nullptr) {
     data = data_;
     pPast = pPast_;
   }
@@ -64,4 +64,4 @@ class Stack2 {
  private:
   Node<T>* pHead;
 };
-#endif  // LAB_05_STACK_STACK2_HPP_
+#endif  // INCLUDE_STACK2_HPP_
