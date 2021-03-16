@@ -1,10 +1,11 @@
 // Copyright 2020 Nasachenko Maxim <maximka5406@gmail.com>
 
-#ifndef INCLUDE_HEADER_HPP_
-#define INCLUDE_HEADER_HPP_
+#ifndef INCLUDE_STACK1_HPP_
+#define INCLUDE_STACK1_HPP_
 #include <iostream>
 #include <memory>
 #include <string>
+#include <utility>
 
 template <typename T>
 class Node {
@@ -32,20 +33,20 @@ class Stack1 {
     } else {
       pHead = new Node<T>(std::move(value), std::move(pHead));
     }
-  };
+  }
   void push(const T& value) {
     if (!pHead) {
       pHead = new Node<T>(value);
     } else {
       pHead = new Node<T>(value, pHead);
     }
-  };
+  }
   void pop() {
     Node<T>* pTemp = pHead->get_pointer_past();
     delete pHead;
     pHead = pTemp;
-  };
-  const T& head() const { return pHead->get_data(); };
+  }
+  const T& head() const { return pHead->get_data(); }
 
   Stack1() { pHead = nullptr; }
   Stack1(const Stack1&) = delete;
@@ -59,4 +60,4 @@ class Stack1 {
  private:
   Node<T>* pHead;
 };
-#endif  // INCLUDE_HEADER_HPP_
+#endif  // INCLUDE_STACK1_HPP_

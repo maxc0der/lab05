@@ -1,10 +1,11 @@
 // Copyright 2020 Nasachenko Maxim <maximka5406@gmail.com>
 
-#ifndef LAB_05_STACK_STACK2_H
-#define LAB_05_STACK_STACK2_H
+#ifndef LAB_05_STACK_STACK2_HPP_
+#define LAB_05_STACK_STACK2_HPP_
 #include <iostream>
 #include <memory>
 #include <string>
+#include <utility>
 
 template <typename T>
 class Node {
@@ -41,15 +42,15 @@ class Stack2 {
       pHead =
           new Node<T>(std::forward<T>(value), std::forward<Node<T>*>(pHead));
     }
-  };
-  const T& head() const { return pHead->get_data(); };
+  }
+  const T& head() const { return pHead->get_data(); }
   T pop() {
     Node<T>* pTemp = pHead->get_pointer_past();
     T out = pHead->get_data();
     delete pHead;
     pHead = pTemp;
     return out;
-  };
+  }
 
   Stack2() { pHead = nullptr; }
   Stack2(const Stack2&) = delete;
@@ -63,4 +64,4 @@ class Stack2 {
  private:
   Node<T>* pHead;
 };
-#endif  // LAB_05_STACK_STACK2_H
+#endif  // LAB_05_STACK_STACK2_HPP_
